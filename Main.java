@@ -119,9 +119,11 @@ public class Main {
     
     static void step(){
         double[][] a = A.clone();
+        for( int i = 0 ; i < A.length ; i++ )
+            a[i] = A[i].clone();
         double[] b = B.clone();
         int[] ipvt = IPVT.clone();
-        //lu_factor( a, n, ipvt );
+        lu_factor( a, n, ipvt );
         lu_solve1( a, n, ipvt, b );
         a0 = a[ 0 ][ 0 ];
         b0 = b[ 0 ];
